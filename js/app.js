@@ -18,14 +18,12 @@ const fetchData = async () => {
 };
 
 const displayCards = (data) => {
-  data.forEach((producto) => {
-    templateCard.querySelector("h5").textContent = producto.title;
-    templateCard.querySelector("p").textContent = producto.price;
-    templateCard
-      .querySelector("img")
-      .setAttribute("src", producto.thumbnailUrl);
+  data.forEach((product) => {
+    templateCard.querySelector("h5").textContent = product.title;
+    templateCard.querySelector("p").textContent = product.price;
+    templateCard.querySelector("img").setAttribute("src", product.thumbnailUrl);
 
-    templateCard.querySelector(".btn-dark").dataset.id = producto.id;
+    templateCard.querySelector(".btn-dark").dataset.id = product.id;
 
     const clone = templateCard.cloneNode(true);
     fragment.appendChild(clone);
