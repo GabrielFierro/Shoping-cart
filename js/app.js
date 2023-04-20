@@ -21,6 +21,9 @@ const displayCards = (data) => {
   data.forEach((producto) => {
     templateCard.querySelector("h5").textContent = producto.title;
     templateCard.querySelector("p").textContent = producto.price;
+    templateCard
+      .querySelector("img")
+      .setAttribute("src", producto.thumbnailUrl);
 
     const clone = templateCard.cloneNode(true);
     fragment.appendChild(clone);
