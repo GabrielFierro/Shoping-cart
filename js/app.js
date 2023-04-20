@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchData();
 });
 
+items.addEventListener("click", (e) => {
+  addProduct(e);
+});
+
 const fetchData = async () => {
   try {
     const res = await fetch("../api.json");
