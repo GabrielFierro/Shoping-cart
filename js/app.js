@@ -25,6 +25,8 @@ const displayCards = (data) => {
       .querySelector("img")
       .setAttribute("src", producto.thumbnailUrl);
 
+    templateCard.querySelector(".btn-dark").dataset.id = producto.id;
+
     const clone = templateCard.cloneNode(true);
     fragment.appendChild(clone);
   });
