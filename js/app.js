@@ -34,3 +34,8 @@ const displayCards = (data) => {
   });
   items.appendChild(fragment);
 };
+
+const addProduct = (e) => {
+  console.log(e.target);
+  console.log(e.target.classList.contains("btn-dark"));
+};
