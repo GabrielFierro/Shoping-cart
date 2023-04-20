@@ -1,7 +1,9 @@
+// Variables zone
 const items = document.getElementById("items");
 const templateCard = document.getElementById("template-card").content;
 const fragment = document.createDocumentFragment();
 
+// Events listener zone
 document.addEventListener("DOMContentLoaded", () => {
   fetchData();
 });
@@ -10,6 +12,7 @@ items.addEventListener("click", (e) => {
   addProduct(e);
 });
 
+// Functions zone
 const fetchData = async () => {
   try {
     const res = await fetch("../api.json");
