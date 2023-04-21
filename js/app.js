@@ -1,5 +1,5 @@
 // Variables zone
-const items = document.getElementById("items");
+const cards = document.getElementById("cards");
 const templateCard = document.getElementById("template-card").content;
 const fragment = document.createDocumentFragment();
 let cart = {}; // It's an object without elements
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchData();
 });
 
-items.addEventListener("click", (e) => {
+cards.addEventListener("click", (e) => {
   addProduct(e);
 });
 
@@ -36,7 +36,7 @@ const displayCards = (data) => {
     const clone = templateCard.cloneNode(true);
     fragment.appendChild(clone);
   });
-  items.appendChild(fragment);
+  cards.appendChild(fragment);
 };
 
 const addProduct = (e) => {
