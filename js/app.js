@@ -62,6 +62,4 @@ const setProduct = (productsSelected) => {
   }
 
   cart[product.id] = { ...product };
-
-  console.log(cart);
 };
