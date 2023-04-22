@@ -4,6 +4,7 @@ const items = document.getElementById("items");
 const footer = document.getElementById("footer");
 const templateCard = document.getElementById("template-card").content;
 const templateFooter = document.getElementById("template-footer").content;
+const templateCart = document.getElementById("template-cart").content;
 const fragment = document.createDocumentFragment();
 let cart = {}; // It's an object without elements
 
@@ -54,7 +55,7 @@ const setProduct = (productsSelected) => {
     id: productsSelected.querySelector(".btn-dark").dataset.id,
     title: productsSelected.querySelector("h5").textContent,
     price: productsSelected.querySelector("p").textContent,
-    stock: 1,
+    cant: 1,
   };
 
   if (cart.hasOwnProperty(product.id)) {
@@ -62,4 +63,26 @@ const setProduct = (productsSelected) => {
   }
 
   cart[product.id] = { ...product };
+  displayCart();
+};
+
+const displayCart = () => {
+  // console.log(cart);
+
+  items.innerHTML = "";
+
+  Object.values(cart).forEach((product) => {
+    templateCart.querySelector("th").textContent = product.id;
+    templateCart.querySelectorAll("td")[0].textContent = product.title;
+    templateCart.querySelectorAll("td")[1].textContent = product.cant;
+    templateCart.querySelector(".btn-info").dataset.id = product.id;
+    templateCart.querySelector(".btn-danger").dataset.id = product.id;
+    templateCart.querySelector("span").textContent =
+      product.cant * product.price;
+
+    const clone = templateCart.cloneNode(true);
+    fragment.appendChild(clone);
+  });
+
+  items.appendChild(fragment);
 };
