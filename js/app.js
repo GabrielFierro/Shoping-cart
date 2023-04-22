@@ -52,9 +52,9 @@ const addProduct = (e) => {
 
 const setProduct = (productsSelected) => {
   const product = {
-    id: productsSelected.querySelector(".btn-dark").dataset.id,
     title: productsSelected.querySelector("h5").textContent,
     price: productsSelected.querySelector("p").textContent,
+    id: productsSelected.querySelector(".btn-dark").dataset.id,
     cant: 1,
   };
 
