@@ -59,7 +59,7 @@ const setProduct = (productsSelected) => {
   };
 
   if (cart.hasOwnProperty(product.id)) {
-    product.stock = cart[product.id].stock + 1;
+    product.cant = cart[product.id].cant + 1;
   }
 
   cart[product.id] = { ...product };
