@@ -50,11 +50,11 @@ const addProduct = (e) => {
   e.stopPropagation(); // Stop another event that can be generated
 };
 
-const setProduct = (productsSelected) => {
+const setProduct = (item) => {
   const product = {
-    title: productsSelected.querySelector("h5").textContent,
-    price: productsSelected.querySelector("p").textContent,
-    id: productsSelected.querySelector(".btn-dark").dataset.id,
+    title: item.querySelector("h5").textContent,
+    price: item.querySelector("p").textContent,
+    id: item.querySelector(".btn-dark").dataset.id,
     cant: 1,
   };
 
