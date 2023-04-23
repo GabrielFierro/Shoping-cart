@@ -92,7 +92,7 @@ const displayCart = () => {
 const displayFooter = () => {
   footer.innerHTML = "";
 
-  if (Objects.keys(cart).length === 0) {
+  if (Object.keys(cart).length === 0) {
     footer.innerHTML = `<th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>`;
     return;
   }
