@@ -99,5 +99,11 @@ const displayFooter = () => {
     (acc, { cant, price }) => acc + cant * price,
     0
   );
-  console.log("nCant: ", nCant, " price: ", nPrice);
+
+  templateFooter.querySelectorAll("td")[0].textContent = nCant;
+  templateFooter.querySelector("span").textContent = nPrice;
+
+  const clone = templateFooter.cloneNode(true);
+  fragment.appendChild(clone);
+  footer.appendChild(fragment);
 };
