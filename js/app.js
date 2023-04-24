@@ -11,6 +11,10 @@ let cart = {}; // It's an object without elements
 // Events listener zone
 document.addEventListener("DOMContentLoaded", () => {
   fetchData();
+  if (localStorage.getItem("cart")) {
+    cart = JSON.parse(localStorage.getItem("cart"));
+    displayCart();
+  }
 });
 
 cards.addEventListener("click", (e) => {
@@ -88,6 +92,8 @@ const displayCart = () => {
   items.appendChild(fragment);
 
   displayFooter();
+
+  localStorage.setItem("cart", JSON.stringify(cart));
 };
 
 const displayFooter = () => {
