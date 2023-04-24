@@ -119,5 +119,12 @@ const displayFooter = () => {
 };
 
 const btnAction = (e) => {
-  console.log(e.target);
+  // Adition
+  if (e.target.classList.contains("btn-info")) {
+    console.log(cart[e.target.dataset.id]);
+    const product = cart[e.target.dataset.id];
+    product.cant++;
+    cart[e.target.dataset.id] = { ...product };
+    displayCart();
+  }
 };
