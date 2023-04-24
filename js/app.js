@@ -96,4 +96,11 @@ const displayFooter = () => {
     footer.innerHTML = `<th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>`;
     return;
   }
+
+  const nCant = Object.values(cart).reduce((acc, { cant }) => acc + cant, 0);
+  const nPrice = Object.values(cart).reduce(
+    (acc, { cant, price }) => acc + cant * price,
+    0
+  );
+  console.log("nCant: ", nCant, " price: ", nPrice);
 };
