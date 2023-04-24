@@ -106,4 +106,10 @@ const displayFooter = () => {
   const clone = templateFooter.cloneNode(true);
   fragment.appendChild(clone);
   footer.appendChild(fragment);
+
+  const button = document.querySelector("#vaciar-carrito");
+  button.addEventListener("click", () => {
+    cart = {};
+    displayCart();
+  });
 };
