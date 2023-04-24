@@ -17,6 +17,10 @@ cards.addEventListener("click", (e) => {
   addProduct(e);
 });
 
+items.addEventListener("click", (e) => {
+  btnAction(e);
+});
+
 // Functions zone
 const fetchData = async () => {
   try {
