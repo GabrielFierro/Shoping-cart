@@ -117,3 +117,7 @@ const displayFooter = () => {
     displayCart();
   });
 };
+
+const btnAction = (e) => {
+  console.log(e.target);
+};
