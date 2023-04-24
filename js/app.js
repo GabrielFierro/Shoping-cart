@@ -22,7 +22,6 @@ const fetchData = async () => {
   try {
     const res = await fetch("../api.json");
     const data = await res.json();
-    // console.log(data);
     displayCards(data);
   } catch (error) {
     console.log(error);
@@ -67,8 +66,6 @@ const setProduct = (item) => {
 };
 
 const displayCart = () => {
-  // console.log(cart);
-
   items.innerHTML = "";
 
   Object.values(cart).forEach((product) => {
