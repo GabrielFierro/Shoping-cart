@@ -127,4 +127,16 @@ const btnAction = (e) => {
     cart[e.target.dataset.id] = { ...product };
     displayCart();
   }
+
+  if (e.target.classList.contains("btn-danger")) {
+    const product = cart[e.target.dataset.id];
+    product.cant--;
+    if (product.cant === 0) {
+      // If there isn't elements delete it
+      delete cart[e.target.dataset.id];
+    }
+    displayCart();
+  }
+
+  e.stopPropagation();
 };
